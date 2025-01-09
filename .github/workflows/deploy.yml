@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: CHeckout
+      - name: Checkout code
         uses: actions/checkout@v3
 
       - name: Setup SSH
@@ -24,15 +24,18 @@ jobs:
             # Navigate to the project directory
             cd /kampair
 
-            # Pull the latest changes
+            sudo chown -R $USER:$USER /kampair
+            sudo chmod -R 755 /kampair
+
+            # Pull the latest changes from GitHub
             git pull origin main
 
-            # Install dependencies
+            # Install dependencies (make sure npm is running with correct permissions)
             npm install --legacy-peer-deps
 
             # Build the Next.js app
             npm run build
 
-            # Restart the app using PM2
+            # Restart the app using PM2 or start it if not running
             pm2 restart kampair || pm2 start npm --name "kampair" -- start -- --dotenv .env
           EOF
