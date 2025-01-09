@@ -34,5 +34,5 @@ jobs:
             npm run build
 
             # Restart the app using PM2
-            pm2 restart nextjs-app || pm2 start npm --name "nextjs-app" -- start
+            pm2 restart kampair || pm2 start npm --name "kampair" -- start -- --dotenv .env
           EOF
