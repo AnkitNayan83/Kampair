@@ -12,7 +12,7 @@ module.exports = {
         NODE_ENV: "production",
         PORT: 3002,
       },
-      env_file: ".env",
+      env_file: "/kampair/.env",
     },
   ],
   deploy: {
