@@ -31,7 +31,7 @@ export default function Navbar() {
       </div>
       <div className="flex items-center gap-2">
         <Image src={"/logo.png"} alt="logo" width={30} height={30} />
-        <h1 className="text-xl font-bold">Kampair</h1>
+        <h1 className="text-xl font-bold">Kampair😊</h1>
       </div>
       <div>
         <ModeToggle />
