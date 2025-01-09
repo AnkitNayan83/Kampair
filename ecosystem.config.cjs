@@ -23,7 +23,7 @@ module.exports = {
       repo: "git@github.com:AnkitNayan83/Kampair.git", 
       ref: "origin/main",
       "post-deploy":
-        "npm ci && NODE_ENV=production npm run build && pm2 reload ecosystem.config.cjs --env production",
+        "git reset --hard && git pull origin main && npm ci && NODE_ENV=production npm run build && pm2 reload ecosystem.config.cjs --env production",
     },
   },
 };

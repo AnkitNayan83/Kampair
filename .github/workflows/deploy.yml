@@ -24,6 +24,9 @@ jobs:
             # Navigate to the project directory
             cd /kampair
 
+            # Pull the latest changes from GitHub
+            git reset --hard && git pull origin main
+
             # Install dependencies
             npm install --legacy-peer-deps
 
