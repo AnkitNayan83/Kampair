@@ -12,14 +12,15 @@ module.exports = {
         NODE_ENV: "production",
         PORT: 3002,
       },
+      env_file: ".env",
     },
   ],
   deploy: {
     production: {
       user: "ubuntu",
       host: "${{ secrets.EC2_PUBLIC_IP }}",
-      path: "/home/ubuntu/kampair-deploy",
-      repo: "git@github.com:AnkitNayan83/Kampair.git",  // Replace with your repo URL
+      path: "/kapair",
+      repo: "git@github.com:AnkitNayan83/Kampair.git", 
       ref: "origin/main",
       "post-deploy":
         "npm ci && NODE_ENV=production npm run build && pm2 reload ecosystem.config.cjs --env production",
