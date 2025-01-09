@@ -12,14 +12,14 @@ module.exports = {
         NODE_ENV: "production",
         PORT: 3002,
       },
-      env_file: "/kampair/.env",
+      env_file: "home/ubuntu/kampair/.env",
     },
   ],
   deploy: {
     production: {
       user: "ubuntu",
       host: "${{ secrets.EC2_PUBLIC_IP }}",
-      path: "/kapair",
+      path: "home/ubuntu/kapair",
       repo: "git@github.com:AnkitNayan83/Kampair.git", 
       ref: "origin/main",
       "post-deploy":
