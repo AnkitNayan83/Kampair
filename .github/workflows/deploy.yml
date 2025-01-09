@@ -37,5 +37,5 @@ jobs:
             npm run build
 
             # Restart the app using PM2 or start it if not running
-            pm2 restart kampair || pm2 start npm --name "kampair" -- start -- --dotenv .env
+            npx pm2 deploy ecosystem.config.cjs production
           EOF
